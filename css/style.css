@@ -1,0 +1,25 @@
+.background{
+   background-color:white;
+   height:170px;
+   
+}
+.request-card{
+   margin:20px;
+}
+.wrapper {
+   padding-left: 300px;
+}
+nav{
+   background-color: white
+}
+.diff{
+   background-color: whitesmoke;
+}
+.divide{
+   margin-top:29px;
+}
+@media only screen and (max-width : 992px) {
+   .wrapper {
+     padding-left: 0;
+   }
+}
