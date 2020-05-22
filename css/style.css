@@ -3,6 +3,32 @@
    height:170px;
    
 }
+.avatar-contact img{
+   width:48px;
+   border-radius:42%;
+   background-color:#f5f5f5;
+   box-shadow:0 2px 2px 0 rgba(0,0,0,.12)}
+.contain{
+   margin:15px;
+}
+#nav-bar{
+   background-color: red;
+   height:200px;
+   position: absolute;
+   z-index: -1;
+}
+#car-table {
+  margin-left:30px !important;
+
+}
+
+#table-card{
+margin:30px;
+margin-top: 70px;;
+}
+#check{
+   margin:20px;
+}
 .request-card{
    margin:20px;
 }
@@ -10,7 +36,8 @@
    padding-left: 300px;
 }
 nav{
-   background-color: white
+   background-color: white;
+
 }
 .diff{
    background-color: whitesmoke;

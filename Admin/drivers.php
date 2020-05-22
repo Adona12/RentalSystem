@@ -9,14 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>Document</title>
 </head>
 
 <body class="diff">
 
-    <nav>
+    <nav id="nav-bar" class="blue lighten-3">
 
 
 
@@ -36,11 +36,11 @@
         <li>
             <div class="divider"></div>
         </li>
-        <li><a href="check.html">Cars</a></li>
+        <li><a href="cars.php">Cars</a></li>
         <li>
             <div class="divider"></div>
         </li>
-        <li class="divid"><a href="#!">Orders</a></li>
+        <li class="divid"><a href="order.php">Orders</a></li>
         <li>
             <div class="divider"></div>
         </li>
@@ -67,7 +67,27 @@
     
    
     <div class="wrapper">
-    <div class="row">
+
+    <div id="table-card" class="card white darken-1 grey-text">
+<div class="contain">
+    <table class="striped  ">
+    <thead>
+      <tr id="car-table">
+      <th>User</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>STATUS</th>
+              <th>ACTION</th>
+      </tr>
+
+
+
+
+
+      
+    </thead>
+    <tbody  id="car-table2">
     <?php
     include_once 'config.php';
 
@@ -83,40 +103,55 @@
         $Fname = $row['fname'];
         $Lname = $row['lname'];
         $Email=$row["email"];
+        $Available=$row['available'];
       
 
        
-    echo ' 
-            <div class="col s12 m3">
-              <div class="card">
-                <div class="card-image">
-                  <img src="images/avengers.jpg">
-                  <span class="card-title">'.$Fname.'</span>
-                </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
-                </div>
-              </div>
+    echo ' <tr>
+       
+        <td><span class="avatar-contact avatar-online"><img src="../images/avengers.jpg"
+                    alt="avatar"></span></td>
+                    <td>'.$Fname.'</td>
+        <td>adonatesfaye99@gmail.com</td>
+        <td>0911129990</td>
+        <td>
+        ';
+        if($Available==true){
+             echo  '<span class="chip lighten-5 green green-text">Available</span>';
+        }else{
+            echo'<span class="chip lighten-5 red red-text">Unavailable</span>';
+        }
+      echo  '
+          </td>
+          <td>
+            <div class="invoice-action">
+             
+              <a href="app-invoice-edit.html" class="invoice-action-edit">
+                <i class="material-icons">delete</i>
+              </a>
             </div>
-         
-          <div class="fixed-action-btn">
-            <a href="AddDriver.php" class="btn-floating btn-large blue">
-              <i class="large material-icons">add</i>
-            </a>
-           
-         </div>
+          </td>
+      </tr>
+    
+ 
         ';
         
     }
   }
 ?>
-</div>
+   </tbody>
+  </table>
+ 
     </div>
-    
+    <div class="fixed-action-btn">
+            <a href="AddDriver.php" class="btn-floating btn-large blue">
+              <i class="large material-icons">add</i>
+            </a>
+           
+         </div>
+        '
+    </div>
+    </div>
 </body>
 
 <script src="jquery-3.4.1.min.js"></script>
@@ -125,7 +160,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script src="js/script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 
 </html>
