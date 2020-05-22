@@ -1,0 +1,13 @@
+nav{
+
+   background: rgba(0,0,0,0.1);
+   box-shadow: none !important;
+
+
+}
+.carousel{
+
+position: absolute;
+z-index:-1;
+
+}
