@@ -1,131 +1,146 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-
-    <title>Document</title>
-</head>
-
-<body class="diff">
-
-    <nav class="purple lighten-2">
-
-
-
-
-    </nav>
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                    <img src="">
-                </div>
-                <a href="#user"><img src=""></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+<div class="col xl9 m8 s12">
+      <div class="card">
+        <div class="card-content invoice-print-area">
+          <!-- header section -->
+          <div class="row invoice-date-number">
+            <div class="col xl4 s12">
+              <span class="invoice-number mr-1">Invoice#</span>
+              <span>000756</span>
             </div>
-        </li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="cars.php">Cars</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li class="divid"><a href="order.php">Orders</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="duedate.html">DueDate</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Rental History</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="drivers.html">Drivers</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Profile</a></li>
-
-        <li>
-            <div class="divider"></div>
-        </li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    
-    
-   
-    <div class="wrapper">
-    <div class="row">
-    <?php
-    include_once 'config.php';
-
-    $query="SELECT * FROM drivers";
-    $mine=mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($mine,$query)){
-        echo "The statement failed";
-    }else{
-    
-    mysqli_stmt_execute($mine);
-    $result=mysqli_stmt_get_result($mine);
-    while($row=mysqli_fetch_assoc($result)){
-        $Fname = $row['fname'];
-        $Lname = $row['lname'];
-        $Email=$row["email"];
-      
-
-       
-    echo ' 
-            <div class="col s12 m3">
-              <div class="card">
-                <div class="card-image">
-                  <img src="images/avengers.jpg">
-                  <span class="card-title">'.$Fname.'</span>
+            <div class="col xl8 s12">
+              <div class="invoice-date display-flex align-items-center flex-wrap">
+                <div class="mr-3">
+                  <small>Date Issue:</small>
+                  <span>08/10/2019</span>
                 </div>
-                <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
-                </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
+                <div>
+                  <small>Date Due:</small>
+                  <span>08/10/2019</span>
                 </div>
               </div>
             </div>
-         
-          <div class="fixed-action-btn">
-            <a href="AddDriver.php" class="btn-floating btn-large blue">
-              <i class="large material-icons">add</i>
-            </a>
-           
-         </div>
-        ';
-        
-    }
-  }
-?>
-</div>
+          </div>
+          <!-- logo and title -->
+          <div class="row mt-3 invoice-logo-title">
+            <div class="col m6 s12 display-flex invoice-logo mt-1 push-m6">
+              <img src="../../../app-assets/images/gallery/pixinvent-logo.png" alt="logo" height="46" width="164">
+            </div>
+            <div class="col m6 s12 pull-m6">
+              <h4 class="indigo-text">Invoice</h4>
+              <span>Software Development</span>
+            </div>
+          </div>
+          <div class="divider mb-3 mt-3"></div>
+          <!-- invoice address and contact -->
+          <div class="row invoice-info">
+            <div class="col m6 s12">
+              <h6 class="invoice-from">Bill From</h6>
+              <div class="invoice-address">
+                <span>Clevision PVT. LTD.</span>
+              </div>
+              <div class="invoice-address">
+                <span>9205 Whitemarsh Street New York, NY 10002</span>
+              </div>
+              <div class="invoice-address">
+                <span>hello@clevision.net</span>
+              </div>
+              <div class="invoice-address">
+                <span>601-678-8022</span>
+              </div>
+            </div>
+            <div class="col m6 s12">
+              <div class="divider show-on-small hide-on-med-and-up mb-3"></div>
+              <h6 class="invoice-to">Bill To</h6>
+              <div class="invoice-address">
+                <span>Pixinvent PVT. LTD.</span>
+              </div>
+              <div class="invoice-address">
+                <span>203 Sussex St. Suite B Waukegan, IL 60085</span>
+              </div>
+              <div class="invoice-address">
+                <span>pixinvent@gmail.com</span>
+              </div>
+              <div class="invoice-address">
+                <span>987-352-5603</span>
+              </div>
+            </div>
+          </div>
+          <div class="divider mb-3 mt-3"></div>
+          <!-- product details table-->
+          <div class="invoice-product-details">
+            <table class="striped responsive-table">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Description</th>
+                  <th>Cost</th>
+                  <th>Qty</th>
+                  <th class="right-align">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Frest Admin</td>
+                  <td>HTML Admin Template</td>
+                  <td>28</td>
+                  <td>1</td>
+                  <td class="indigo-text right-align">$28.00</td>
+                </tr>
+                <tr>
+                  <td>Apex Admin</td>
+                  <td>Anguler Admin Template</td>
+                  <td>24</td>
+                  <td>1</td>
+                  <td class="indigo-text right-align">$24.00</td>
+                </tr>
+                <tr>
+                  <td>Stack Admin</td>
+                  <td>HTML Admin Template</td>
+                  <td>24</td>
+                  <td>1</td>
+                  <td class="indigo-text right-align">$24.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- invoice subtotal -->
+          <div class="divider mt-3 mb-3"></div>
+          <div class="invoice-subtotal">
+            <div class="row">
+              <div class="col m5 s12">
+                <p>Thanks for your business.</p>
+              </div>
+              <div class="col xl4 m7 s12 offset-xl3">
+                <ul>
+                  <li class="display-flex justify-content-between">
+                    <span class="invoice-subtotal-title">Subtotal</span>
+                    <h6 class="invoice-subtotal-value">$72.00</h6>
+                  </li>
+                  <li class="display-flex justify-content-between">
+                    <span class="invoice-subtotal-title">Discount</span>
+                    <h6 class="invoice-subtotal-value">- $ 09.60</h6>
+                  </li>
+                  <li class="display-flex justify-content-between">
+                    <span class="invoice-subtotal-title">Tax</span>
+                    <h6 class="invoice-subtotal-value">21%</h6>
+                  </li>
+                  <li class="divider mt-2 mb-2"></li>
+                  <li class="display-flex justify-content-between">
+                    <span class="invoice-subtotal-title">Invoice Total</span>
+                    <h6 class="invoice-subtotal-value">$ 61.40</h6>
+                  </li>
+                  <li class="display-flex justify-content-between">
+                    <span class="invoice-subtotal-title">Paid to date</span>
+                    <h6 class="invoice-subtotal-value">- $ 00.00</h6>
+                  </li>
+                  <li class="display-flex justify-content-between">
+                    <span class="invoice-subtotal-title">Balance (USD)</span>
+                    <h6 class="invoice-subtotal-value">$ 10,953</h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-</body>
-
-<script src="jquery-3.4.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-<script src="../js/script.js"></script>
-</body>
-
-</html>
