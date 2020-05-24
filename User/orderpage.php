@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/home.css">
@@ -26,6 +27,8 @@ include "header.php";
 ?>
 
 
+
+<div style='height:30px;'></div>
 
 
   <div style='height:100%;' class="valign-wrapper row login-box">
@@ -159,8 +162,8 @@ include "header.php";
           </div>
         </div>
         <div class="card-action right-align">
-          <input type="reset" id="reset" class="btn-flat grey-text waves-effect">
-          <input type="submit" class="btn green waves-effect waves-light" value="Login">
+          
+          <input type="submit" class="btn text-white blue darken-3" value="Submit">
         </div>
       </form>
     </div>
