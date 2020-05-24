@@ -16,54 +16,35 @@
 
 <body class="diff">
 
-    <nav class="purple lighten-2">
+<nav >
 
 
 
 
-    </nav>
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                    <img src="">
-                </div>
-                <a href="#user"><img src=""></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-            </div>
-        </li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="cars.php">Cars</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li class="divid"><a href="order.php">Orders</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="duedate.html">DueDate</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Rental History</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="drivers.html">Drivers</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Profile</a></li>
-
-        <li>
-            <div class="divider"></div>
-        </li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+</nav>
+<ul id="slide-out" class="sidenav sidenav-fixed">
+    <li class="user">
+       
+            
+          
+     
+    </li>
+   
+    <li><a href="cars.php">Cars</a></li>
     
+    <li class="divid"><a href="order.php">Orders</a></li>
+    
+    <li><a  href="duedate.html">DueDate</a></li>
+   
+    <li><a href="RentalHistory.php">Rental History</a></li>
+    
+    <li><a href="drivers.php">Drivers</a></li>
+   
+    <li><a href="check.html">Profile</a></li>
+
+    
+</ul>
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     
    
     <div class="wrapper">
@@ -90,7 +71,7 @@
             <div class="col s12 m3">
               <div class="card">
                 <div class="card-image">
-                  <img src="images/avengers.jpg">
+                  <img src="../images/avengers.jpg">
                   <span class="card-title">'.$Fname.'</span>
                 </div>
                 <div class="card-content">

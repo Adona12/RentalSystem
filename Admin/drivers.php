@@ -16,61 +16,44 @@
 
 <body class="diff">
 
-    <nav id="nav-bar" class="blue lighten-3">
+    <nav id="nav-bar" class="gradient-45deg-indigo-purple">
 
 
 
 
     </nav>
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                    <img src="">
-                </div>
-                <a href="#user"><img src=""></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-            </div>
-        </li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="cars.php">Cars</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li class="divid"><a href="order.php">Orders</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="duedate.html">DueDate</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Rental History</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="drivers.html">Drivers</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Profile</a></li>
+ 
+<ul id="slide-out" class="sidenav sidenav-fixed">
+    <li class="user">
+       
+            
+          
+     
+    </li>
+   
+    <li><a href="cars.php">Cars</a></li>
+    
+    <li class="divid"><a href="order.php">Orders</a></li>
+    
+    <li><a  href="duedate.html">DueDate</a></li>
+   
+    <li><a href="RentalHistory.php">Rental History</a></li>
+    
+    <li><a href="drivers.php">Drivers</a></li>
+   
+    <li><a href="check.html">Profile</a></li>
 
-        <li>
-            <div class="divider"></div>
-        </li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    
+</ul>
+<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     
     
    
     <div class="wrapper">
 
-    <div id="table-card" class="card white darken-1 grey-text">
+    <div id="table-card" class="card  grey-text">
 <div class="contain">
-    <table class="striped  ">
+    <table class=" responsive-table ">
     <thead>
       <tr id="car-table">
       <th>User</th>
@@ -90,13 +73,12 @@
     <tbody  id="car-table2">
     <?php
     include_once 'config.php';
-
-    $query="SELECT * FROM drivers";
+    $stat=1;
+    $query="SELECT * FROM drivers ";
     $mine=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($mine,$query)){
         echo "The statement failed";
     }else{
-    
     mysqli_stmt_execute($mine);
     $result=mysqli_stmt_get_result($mine);
     while($row=mysqli_fetch_assoc($result)){
