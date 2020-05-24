@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/home.css">
             
     <title>Document</title>
 </head>
-<body id='homepage'>
-    <nav class="nav-wrapper">
+<body >
+    <nav class="nav-wrapper container">
+    <a id="logo-container" href="#"  style='color:black;'class="brand-logo">Logo</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-links">
             <i class="material-icons">menu</i>
         </a>
@@ -38,18 +41,24 @@
 
     </ul>
 
-    <div class="carousel carousel-slider">
-            <a   class="carousel-item" href="#one!"> <div class='carousel-image' style='background-image: url(images/wedding.jpg);'></div> </a>
-            <a  class="carousel-item" href="#three!"><div class='carousel-image' style='background-image: url(images/vitz.jpg);'></div></a>
-            <a  class="carousel-item" href="#four!"><div  class='carousel-image' style='background-image: url(images/tourcarss.jpg);'></div></a>
-            <a  class="carousel-item" href="#five!"><div  class='carousel-image' style='background-image: url(images/mercedes2.jpg);'></div></a>
+    <div class="carousel carousel-slider" style='height:500px !important'>
+            <a   class="carousel-item" href="#one!"> <div class='carousel-image' style='background-image: url(images/wedding.jpg);'>  <div class='fading-gradient' ></div> </div> </a>
+            <a  class="carousel-item" href="#three!"><div class='carousel-image' style='background-image: url(images/vitz.jpg);'><div class='fading-gradient' ></div></div></a>
+            <a  class="carousel-item" href="#four!"><div  class='carousel-image' style='background-image: url(images/tourcarss.jpg);'><div class='fading-gradient' ></div></div></a>
+            <a  class="carousel-item" href="#five!"><div  class='carousel-image' style='background-image: url(images/mercedes2.jpg);'><div class='fading-gradient' ></div></div></a>
             
           </div>
-          <h1 style='margin-top: 400px;' class="header center orange-text">COMPANY NAME</h1>
+
+
+          <div class='slogan-container'>
+          <hr  class='hrstyle'>
+              <p class='slogan'>Your-slogan</p>
+                <h1>Lorem ipsum dolor sit, amet consectetur</h1>
+          </div>
+          <h1  class="header center blue-grey-text darken-4 ">COMPANY NAME</h1>
           
           <div class="row center">
-            <p>--slogan goes here</p>
-            <h6 class="header col s12 light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, 
+            <h6 style='color:#747474;' class="header justify col s12 light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, 
                 consequuntur officia nemo magnam incidunt eveniet, nihil esse repudiandae labore sint quibusdam deleniti voluptas 
                 sunt necessitatibus excepturi, explicabo recusandae. Quisquam, assumenda!
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, 
