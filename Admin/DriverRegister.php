@@ -1,5 +1,9 @@
 <?php
 include_once 'config.php';
+session_start();
+if(!isset($_SESSION["USER_EMAIL"])){
+    header("Location:../index.php");
+  }
 if(isset($_POST['Register'])){
     $Fname=$_POST['fname'];
     $Lname=$_POST['lname'];

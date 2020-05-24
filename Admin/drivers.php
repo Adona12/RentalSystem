@@ -1,4 +1,11 @@
 
+<?php
+session_start();
+if(!isset($_SESSION["USER_EMAIL"])){
+  header("Location:../index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,13 +42,13 @@
     
     <li class="divid"><a href="order.php">Orders</a></li>
     
-    <li><a  href="duedate.html">DueDate</a></li>
+    <li><a  href="duedate.php">DueDate</a></li>
    
     <li><a href="RentalHistory.php">Rental History</a></li>
     
     <li><a href="drivers.php">Drivers</a></li>
    
-    <li><a href="check.html">Profile</a></li>
+    <li><a href="check.php">Profile</a></li>
 
     
 </ul>

@@ -1,69 +1,10 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-
-    <title>Document</title>
-</head>
-
-<body class="diff">
-
-    <nav>
-
-
-
-
-    </nav>
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-        <li>
-            <div class="user-view">
-                <div class="background">
-                    <img src="">
-                </div>
-                <a href="#user"><img src=""></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-            </div>
-        </li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Cars</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li class="divid"><a href="order.php">Orders</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="duedate.html">DueDate</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Rental History</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="drivers.php">Drivers</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="check.html">Profile</a></li>
-
-        <li>
-            <div class="divider"></div>
-        </li>
-    </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+<?php
+session_start();
+    include 'header.php';
+    if(!isset($_SESSION["USER_EMAIL"])){
+        header("Location:../index.php");
+      }
+?>
     <div class="wrapper">
         
        
