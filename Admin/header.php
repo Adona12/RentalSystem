@@ -40,7 +40,7 @@
     
     <li><a href="drivers.php">Drivers</a></li>
    
-    <li><a href="Logout.php">Logout</a></li>
+    <li><a href="../Logout.php">Logout</a></li>
 
     
 </ul>
