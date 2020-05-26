@@ -2,9 +2,7 @@
 session_start();
     include 'header.php';
   
-if(!isset($_SESSION["USER_EMAIL"])){
-//  header("Location:../index.php");
-}
+
 ?>
     
 
