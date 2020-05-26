@@ -107,12 +107,11 @@ session_start();
 
 
 
-        <div id="modal1" class="modal modal-fixed-footer">
+        <div id="modal1" class="modal ">
         <div class="modal-content blue-text text-darken-2">
 
         <form method="post" action="DeclineOrder.php?id='.$id.'">
-          <h4>'.$id.'</h4>
-          <p>A bunch of text</p>
+          
           <div class="input-field col s12">
  <select name="driver">
    <option value="" disabled selected>Choose the driver</option>
@@ -137,36 +136,9 @@ session_start();
    echo'
  
  </select>
- <label>Car selection</label>
+ <label>Driver selection</label>
 </div>
 
-<div class="input-field col s12">
-<select name="car">
-<option value="" disabled selected>Choose the car</option>
-';
-$carquery="SELECT * FROM cars";
-   $stmt=mysqli_stmt_init($conn);
-   if(!mysqli_stmt_prepare($stmt,$carquery)){
-       echo "The statement failed";
-   }else{
-   
-   mysqli_stmt_execute($stmt);
-   $answer=mysqli_stmt_get_result($stmt);
-   while($carrow=mysqli_fetch_assoc($answer)){
-       $cid=$carrow['id'];
-       $plate = $carrow['licencePlate'];
-       $type = $carrow['type'];
-       $color=$carrow["color"];
-      
-       
- 
-
-echo'<option x value="'.$cid.'">'.$plate.','.$type.'</option>';
-}
-   }
-  echo' </select>
-<label>Driver Selection</label>
-</div>
 
 
           

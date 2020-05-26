@@ -15,7 +15,7 @@ if(!isset($_SESSION["USER_EMAIL"])){
     <?php
     include_once 'config.php';
 
-    $query="SELECT * FROM drivers";
+    $query="SELECT * FROM cars";
     $mine=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($mine,$query)){
         echo "The statement failed";
@@ -24,9 +24,16 @@ if(!isset($_SESSION["USER_EMAIL"])){
     mysqli_stmt_execute($mine);
     $result=mysqli_stmt_get_result($mine);
     while($row=mysqli_fetch_assoc($result)){
-        $Fname = $row['fname'];
-        $Lname = $row['lname'];
-        $Email=$row["email"];
+        $licencePlate = $row['licencePlate'];
+        $cartype = $row['cartype'];
+        $engine = $row['engine'];
+        $carImage=$row["carImage"];
+        $dprice=$row["dprice"];
+        $price=$row["price"];
+        $transmission=$row["transmission"];
+        $fuel=$row["fuel"];
+        $year=$row["byear"];
+      
       
 
        
@@ -34,12 +41,18 @@ if(!isset($_SESSION["USER_EMAIL"])){
             <div class="col s12 m3">
               <div class="card">
                 <div class="card-image">
-                  <img src="../images/avengers.jpg">
-                  <span class="card-title">'.$Fname.'</span>
+                  <img src="../images/carImages/'.$carImage.'">
+             
                 </div>
                 <div class="card-content">
-                  <p>I am a very simple card. I am good at containing small bits of information.
-                  I am convenient because I require little markup to use effectively.</p>
+                  <div>Car type: '.$cartype.'</div>
+                  <div>Engine: '.$engine.'</div>
+                  <div>Fuel: '.$fuel.'</div>
+
+                  <div>Transmission: '.$transmission.'</div>
+                  <div>Transmission: '.$year.'</div>
+                  <div>Plate number: '.$licencePlate.'</div>
+                  <div>Price: '.$price.'ETB</div>
                 </div>
                 <div class="card-action">
                   <a href="#">This is a link</a>

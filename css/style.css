@@ -34,8 +34,11 @@ nav{
    background-color:#1e1e2f !important ;
 
 }
-.card{
+.card,.modal,.modal-footer{
    background-color:#1e1e2f !important ;
+}
+.modal{
+   height:160px;
 }
 .user{
    height:100px;
@@ -141,13 +144,18 @@ transition: box-shadow .25s;
    }
 
 
-
+   .describe{
+      margin-left: 1rem;
+   }
 /* FORM COLORS */
 /* label color */
 .input-field{
    margin-bottom: 1rem;
 }
 .input-field label {
+   color: rgb(247, 241, 241);
+ }
+ textarea{
    color: rgb(247, 241, 241);
  }
  .input-field input {
