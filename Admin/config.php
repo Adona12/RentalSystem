@@ -2,6 +2,6 @@
 $dbServer="localhost";
 $dbuser="root";
 $dbpass="";
-$dbname="rentaldatabase";
+$dbname="rental";
 $conn=mysqli_connect($dbServer,$dbuser,$dbpass,$dbname);
 ?>
