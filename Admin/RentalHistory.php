@@ -32,8 +32,24 @@ $query="SELECT * FROM acceptedrequest";
         $dob= $row['dob'];
         $cartype= $row['cartype'];
         $phone= $row['phone'];
+
         $referal= $row['referal'];
         $driver= $row['driver'];
+        
+      $pick = strtotime($pickdate);
+      $drop = strtotime($dropdate);
+      $newpickformat = date('Y-m-d',$pick);
+      $newdropformat = date('Y-m-d',$drop);
+    //  $temp= round(abs(strtotime($newdropformat) - strtotime( $newpickformat))/86400);
+      $first_date = new DateTime($newpickformat);
+      $second_date = new DateTime( $newdropformat );
+
+
+      $interval =  $second_date ->diff($first_date);
+$duration=" " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days "; 
+
+      $passport= $row['passport'];
+      
         $Fname ="";
         $Lname="";
         $query="SELECT * FROM drivers where id=?";
@@ -52,39 +68,20 @@ $query="SELECT * FROM acceptedrequest";
       }     
 
 
-        
-        $passport= $row['passport'];
-        
+
 echo'
 
 <div class="card request">
 <div class="card-content invoice-print-area">
   <!-- header section -->
-  <div class="row invoice-date-number">
-    <div class="col xl4 s12">
-      <span class="invoice-number mr-1">Order#</span>
-      <span>'.$id.'</span>
-    </div>
-    <div class="col xl8 s12">
-      <div class="invoice-date display-flex align-items-center flex-wrap">
-        <div class="mr-3">
-          <small >Date Issue:</small>
-          <span style="margin-right:3px;">'.$pickdate.'</span>
-        </div>
-        <div  class="mr-3">
-          <small>Date Due:</small>
-          <span>'.$dropdate.'</span>
-        </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- logo and title -->
   <div class="row mt-3 invoice-logo-title">
     <div class="col m6 s12 display-flex invoice-logo mt-1 push-m6">
       <img src="../images/download.png" alt="logo" height="46" width="164">
     </div>
     <div class="col m6 s12 pull-m6">
-      <h4 class="indigo-text">Request Info</h4>
+      <h6 class="indigo-text invoice-number mr-1">Order# '.$id.'</h6>
 
     </div>
   </div>
@@ -139,7 +136,7 @@ echo'
         <span>dropoff-location:'.$droplocation.'</span>
       </div>
       <div class="invoice-address">
-        <span>duration:15 DAYS</span>
+        <span>duration:'.$duration.'</span>
       </div>
       <div class="invoice-address">
         <span>pay out:2000 birr</span>

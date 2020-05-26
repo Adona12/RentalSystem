@@ -10,7 +10,7 @@
         <li> <a href="homepage.php">Home</a></li>
             <li> <a href="orderpage.php">Order Now</a></li>
             <li> <a href="">Profile</a></li>
-            <li> <a href="">Log Out</a></li>
+            <li> <a href="../Logout.php">Log Out</a></li>
          
 
         </ul>
@@ -20,7 +20,7 @@
     <li> <a href="homepage.php">Home</a></li>
             <li> <a href="orderpage.php">Order Now</a></li>
             <li> <a href="">Profile</a></li>
-            <li> <a href="">Log Out</a></li>
+            <li> <a href="Logout.php">Log Out</a></li>
 
 
     </ul>

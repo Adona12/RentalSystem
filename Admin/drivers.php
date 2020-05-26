@@ -48,7 +48,7 @@ if(!isset($_SESSION["USER_EMAIL"])){
     
     <li><a href="drivers.php">Drivers</a></li>
    
-    <li><a href="check.php">Profile</a></li>
+    <li><a href="../Logout.php">Profile</a></li>
 
     
 </ul>
@@ -93,12 +93,13 @@ if(!isset($_SESSION["USER_EMAIL"])){
         $Lname = $row['lname'];
         $Email=$row["email"];
         $Available=$row['available'];
+        $image="../images/".$row['driverimage'];
       
 
        
     echo ' <tr>
        
-        <td><span class="avatar-contact avatar-online"><img src="../images/avengers.jpg"
+        <td><span class="avatar-contact avatar-online"><img src="'.    $image.'"
                     alt="avatar"></span></td>
                     <td>'.$Fname.'</td>
         <td>adonatesfaye99@gmail.com</td>
@@ -138,7 +139,7 @@ if(!isset($_SESSION["USER_EMAIL"])){
             </a>
            
          </div>
-        '
+        
     </div>
     </div>
 </body>

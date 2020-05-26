@@ -3,7 +3,7 @@
 ?>
     <div class="wrapper">
     <?php
-    
+   
 
 ?>
 <div class="card request">
@@ -12,7 +12,7 @@
             <form class="col s12"  method="post" action="DriverRegister.php" enctype="multipart/form-data">
             <div class="row">
                 <div class="input-field col s12 center">
-                  <h4>Driver Registration Form</h4>
+                  <h4>Car Registration Form</h4>
                 </div>
               </div>
               <div class="row">

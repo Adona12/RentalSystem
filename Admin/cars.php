@@ -46,7 +46,7 @@ session_start();
             </div>
          
           <div class="fixed-action-btn">
-            <a href="AddDriver.php" class="btn-floating btn-large blue">
+            <a href="AddCar.php" class="btn-floating btn-large blue">
               <i class="large material-icons">add</i>
             </a>
            

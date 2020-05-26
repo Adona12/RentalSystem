@@ -11,8 +11,10 @@ if(!isset($_POST['login'])){
    
     $query="SELECT * FROM users WHERE email='$email' AND passoword='$password' ";
     $mine=mysqli_stmt_init($conn);
+    $user=mysqli_num_rows(mysqli_query($conn,$query));
+    if($user>=1){
     if(!mysqli_stmt_prepare($mine,$query)){
-        echo "The statement failed";
+        header("Location:index.php");
     }else{
     
     mysqli_stmt_execute($mine);
@@ -27,8 +29,14 @@ if(!isset($_POST['login'])){
             $_SESSION['Lname']=$Lname;
         header("Location:Admin/cars.php");
      //echo $_SESSION['USER_EMAIL'];
+        }else{
+            header("Location:User/homepage.php");
         }
     }
-    header("Location:index.php");
+  
 }
+    }else{
+      //  echo $user;
+        header("Location:index.php");
+    }
 }

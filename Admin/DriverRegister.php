@@ -8,13 +8,38 @@ if(isset($_POST['Register'])){
     $Fname=$_POST['fname'];
     $Lname=$_POST['lname'];
     $Email=$_POST['email'];
-if(!empty($Fname))
-    $query="INSERT INTO drivers(fname,lname,email) VALUES (?,?,?);";
+
+$file = $_FILES['file'];
+$fileName = $file['name'];
+$fileTempName = $file['tmp_name'];
+$fileSize = $file['size'];
+$fileError = $file['error'];
+$fileType = $file['type'];
+$fileExt = explode('.', $fileName);
+$fileActualExt = strtolower(end($fileExt));
+$allowed = array('jpg', 'jpeg', 'png', 'pdf');
+if(in_array($fileActualExt, $allowed)){
+    if($fileError === 0){
+        if($fileSize < 1000000000000){
+            $fileNameNew = $Email.".".$fileActualExt;
+            $fileDestination = '../images/' . $fileNameNew;
+            echo $fileDestination;
+    $query="INSERT INTO drivers(fname,lname,email,driverimage) VALUES (?,?,?,?);";
     $stmt=mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt,$query);
-    mysqli_stmt_bind_param($stmt,"sss",$Fname,$Lname,$Email);
+    mysqli_stmt_bind_param($stmt,"ssss",$Fname,$Lname,$Email,$fileNameNew);
     mysqli_stmt_execute($stmt);
-    
+    move_uploaded_file($fileTempName, $fileDestination);
     header("Location: AddDriver.php?status=successful");
+        }else{
+            header("Location: AddDriver.php?status=image_size_too_big");
+        }
+    }
+    else{
+            header("Location: AddDriver.php?status=file_error");
+        }
+    }else{
+            header("Location: AddDriver.php?status=file_type_not_allowed");
+        }
 }
 ?>
