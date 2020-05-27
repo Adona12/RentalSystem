@@ -9,6 +9,7 @@ session_start();
     <div class="wrapper">
     <div class="row">
     <?php
+     $count=0;
     include_once 'config.php';
 
     $query="SELECT * FROM request";
@@ -18,6 +19,7 @@ session_start();
     }else{
     
     mysqli_stmt_execute($mine);
+   
     $result=mysqli_stmt_get_result($mine);
     while($row=mysqli_fetch_assoc($result)){
         $id=$row['id'];
@@ -146,7 +148,7 @@ session_start();
         <div class="modal-footer">
 
           <button id="sbtn" class="btn waves-effect waves-light" type="submit" name="accept">Submit</button>
-          <button class="modal-close btn waves-effect waves-light">Cancel</button>
+ 
           </div>
         </form>
       </div>
@@ -163,6 +165,9 @@ session_start();
     }
 }
   }
+  if($count==0){
+    echo '<div  style="margin-top:300px" class="center">No orders </div>';
+}
 ?>
 
 </div>

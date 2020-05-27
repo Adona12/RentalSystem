@@ -47,6 +47,7 @@ if(!isset($_SESSION["USER_EMAIL"])){
     <li><a href="RentalHistory.php">Rental History</a></li>
     
     <li><a href="drivers.php">Drivers</a></li>
+    <li><a href="advertisment.php">Advertisments</a></li>
    
     <li><a href="../Logout.php">Profile</a></li>
 
@@ -58,29 +59,11 @@ if(!isset($_SESSION["USER_EMAIL"])){
    
     <div class="wrapper">
 
-    <div id="table-card" class="card  grey-text">
-<div class="contain">
-    <table class=" responsive-table ">
-    <thead>
-      <tr id="car-table">
-      <th>User</th>
-              <th>Full Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>STATUS</th>
-              <th>ACTION</th>
-      </tr>
-
-
-
-
-
-      
-    </thead>
-    <tbody  id="car-table2">
+   
     <?php
     include_once 'config.php';
     $stat=1;
+    $count=0;
     $query="SELECT * FROM drivers ";
     $mine=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($mine,$query)){
@@ -89,21 +72,46 @@ if(!isset($_SESSION["USER_EMAIL"])){
     mysqli_stmt_execute($mine);
     $result=mysqli_stmt_get_result($mine);
     while($row=mysqli_fetch_assoc($result)){
+      $id= $row['id'];
         $Fname = $row['fname'];
         $Lname = $row['lname'];
         $Email=$row["email"];
+        $phone=$row["phone"];
         $Available=$row['available'];
         $image="../images/".$row['driverimage'];
       
-
+$count++;
        
-    echo ' <tr>
+    echo ' 
+    
+    <div id="table-card" class="card  grey-text">
+    <div class="contain">
+        <table class=" responsive-table ">
+        <thead>
+          <tr id="car-table">
+          <th>User</th>
+                  <th>Full Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>STATUS</th>
+                  <th>ACTION</th>
+          </tr>
+    
+    
+    
+    
+    
+          
+        </thead>
+        <tbody  id="car-table2">
+    
+    <tr>
        
         <td><span class="avatar-contact avatar-online"><img src="'.    $image.'"
                     alt="avatar"></span></td>
-                    <td>'.$Fname.'</td>
-        <td>adonatesfaye99@gmail.com</td>
-        <td>0911129990</td>
+                    <td>'.$Fname.' '.$Lname.'</td>
+                    <td>'.$Email.'</td>
+                    <td>'.$phone.'</td>
         <td>
         ';
         if($Available==true){
@@ -115,9 +123,11 @@ if(!isset($_SESSION["USER_EMAIL"])){
           </td>
           <td>
             <div class="invoice-action">
-             
-              <a href="app-invoice-edit.html" class="invoice-action-edit">
-                <i class="material-icons">delete</i>
+             <form method="post" action="DeleteDriver.php?id='.$id.'">
+             <button class="btn  waves-light" type="submit" name="deleteDrive">
+             <i class="material-icons right">delete</i>
+           </button>
+                <form/>
               </a>
             </div>
           </td>
@@ -127,6 +137,9 @@ if(!isset($_SESSION["USER_EMAIL"])){
         ';
         
     }
+  }
+  if($count==0){
+    echo '<div style="margin-top:300px" class="center">No drivers in database </div>';
   }
 ?>
    </tbody>

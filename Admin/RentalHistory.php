@@ -17,6 +17,7 @@ $query="SELECT * FROM acceptedrequest";
     }else{
     
     mysqli_stmt_execute($mine);
+    $count=0;
     $result=mysqli_stmt_get_result($mine);
     while($row=mysqli_fetch_assoc($result)){
         $id=$row['id'];
@@ -148,6 +149,9 @@ echo'
 </div>
 ';
 }
+}
+if($count==0){
+  echo '<div  style="margin-top:300px" class="center">No records </div>';
 }
 ?>
 

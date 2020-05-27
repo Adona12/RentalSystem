@@ -8,6 +8,7 @@ if(isset($_POST['Register'])){
     $Fname=$_POST['fname'];
     $Lname=$_POST['lname'];
     $Email=$_POST['email'];
+    $Phone=$_POST['phone'];
 
 $file = $_FILES['file'];
 $fileName = $file['name'];
@@ -24,10 +25,10 @@ if(in_array($fileActualExt, $allowed)){
             $fileNameNew = $Email.".".$fileActualExt;
             $fileDestination = '../images/' . $fileNameNew;
             echo $fileDestination;
-    $query="INSERT INTO drivers(fname,lname,email,driverimage) VALUES (?,?,?,?);";
+    $query="INSERT INTO drivers(fname,lname,email,phone,driverimage) VALUES (?,?,?,?,?);";
     $stmt=mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt,$query);
-    mysqli_stmt_bind_param($stmt,"ssss",$Fname,$Lname,$Email,$fileNameNew);
+    mysqli_stmt_bind_param($stmt,"sssss",$Fname,$Lname,$Email,$Phone,$fileNameNew);
     mysqli_stmt_execute($stmt);
     move_uploaded_file($fileTempName, $fileDestination);
     header("Location: AddDriver.php?status=successful");

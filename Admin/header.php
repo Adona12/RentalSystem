@@ -39,6 +39,7 @@
     <li><a href="RentalHistory.php">Rental History</a></li>
     
     <li><a href="drivers.php">Drivers</a></li>
+    <li><a href="advertisment.php">Advertisments</a></li>
    
     <li><a href="../Logout.php">Logout</a></li>
 

@@ -2,16 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="User/css/style.css">
+<link rel="stylesheet" href="User/css/common.css">
+<link rel="stylesheet" href="User/css/sign-up.css">
 </head>
 <body>
-<form class="col s12"  method="post" action="Authentication.php">
-<label for="user" class="label">Username</label>
-<input id="user" required  type="email" name="userEmail" class="input">
-<label for="pass" class="label">Password</label>
-<input id="pass" type="password" required  name="userPassword" class="input" data-type="password">
-<button id="sbtn" class="btn waves-effect waves-light" type="submit" name="login">Login</Button>
-</form>
+    
+
+
+
+
+
+<div class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
+    <div class="valign" style="width:100%;">
+        <div class="container">
+           <div class="row">
+              <div class="col s12 m6 offset-m3">
+                 <div class="card">
+                    <div class="card-content">
+                       <span  style='margin-top:30px;'class="card-title center black-text">LOG IN</span>
+                       <form method="post" action="Authentication.php">
+                       <div class='form'>                         
+                          <div class="row">
+                             <div class="input-field col s12">
+                                <input id="email" name="userEmail" type="email">
+                                <label for="email" >Email</label>
+                             </div>
+                          </div>
+                          <div class="row">
+                             <div class="input-field col s12">
+                                <input id="password" name="userPassword" type="password">
+                                <label for="password" >Password</label>
+                             </div>
+                          </div>
+                
+                          <div class="row">
+                             <div class="input-field col s12">
+                             <input type="submit" name="login" class="btn" value="log in"> 
+                             <div class='link'><a  href="sign-up.php">Don-t have an account? Sign up</a></div>
+                           
+                           </div>
+                           
+                           
+                          </div>
+                          </div>
+                       </form>
+                    </div>
+                   
+                   
+                       
+                    
+                 </div>
+              </div>
+           </div>
+        </div>
+    </div>
+</div>
+
+
+
 </body>
+
+
+
+<script src="jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+    <script src="js/script.js"></script>
 </html>

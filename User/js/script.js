@@ -35,3 +35,18 @@ $(document).ready(function(){
           $(document).ready(function(){
             $('select').formSelect();
           });
+         
+          $("#password").on("focusout", function (e) {
+            if ($(this).val() != $("#confirm-password").val()) {
+                $("#confirm-password").removeClass("valid").addClass("invalid");
+            } else {
+                $("#confirm-password").removeClass("invalid").addClass("valid");
+            }
+        });
+        
+        $("#confirm-password").on("keyup", function (e) {
+            if ($("#password").val() != $(this).val()) {
+                $(this).removeClass("valid").addClass("invalid");
+            } else {
+                $(this).removeClass("invalid").addClass("valid");
+            }});

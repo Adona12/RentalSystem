@@ -12,7 +12,7 @@ session_start();
     <div class="row">
     <?php
     include_once 'config.php';
-
+$count=0;
     $query="SELECT * FROM cars";
     $mine=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($mine,$query)){
@@ -22,6 +22,7 @@ session_start();
     mysqli_stmt_execute($mine);
     $result=mysqli_stmt_get_result($mine);
     while($row=mysqli_fetch_assoc($result)){
+      $id=$row['id'];
         $licencePlate = $row['licencePlate'];
         $cartype = $row['cartype'];
         $engine = $row['engine'];
@@ -32,29 +33,45 @@ session_start();
         $fuel=$row["fuel"];
         $year=$row["byear"];
       
-      
+      $count++;
 
        
     echo ' 
-            <div class="col s12 m3">
+            <div class="col s12 m4">
               <div class="card">
                 <div class="card-image">
                   <img src="../images/carImages/'.$carImage.'">
              
                 </div>
                 <div class="card-content">
+                <div class="row">
+                <div class="col s12 m6">
                   <div>Car type: '.$cartype.'</div>
+                  </div>
+                  <div class="col s12 m6">
                   <div>Engine: '.$engine.'</div>
+                  </div>
+                  <div class="col s12 m6">
                   <div>Fuel: '.$fuel.'</div>
-
-                  <div>Transmission: '.$transmission.'</div>
-                  <div>Transmission: '.$year.'</div>
+                  </div>
+                  <div class="col s12 m6">
+                  <div>'.$transmission.'</div>
+                  </div>
+                  
+                  <div class="col s12 m6">
                   <div>Plate number: '.$licencePlate.'</div>
+                  </div>
+                  <div class="col s12 m6">
                   <div>Price: '.$price.'ETB</div>
+                  </div>
                 </div>
-                <div class="card-action">
-                  <a href="#">This is a link</a>
+                <form method="post" action="deletecar.php?id='.$id.'">
+                <button id="car-button" class=" btn  waves-light" type="submit" name="deleteCar">Remove 
+                <i class="material-icons right">delete</i>
+              </button>
+                   <form/>
                 </div>
+               
               </div>
             </div>
          
@@ -67,6 +84,9 @@ session_start();
         ';
         
     }
+  }
+  if($count==0){
+    echo '<div style="margin-top:300px" class="center">No cars in database </div>';
   }
 ?>
 </div>

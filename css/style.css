@@ -10,6 +10,23 @@
       /* background-color:  #1e88e5  */
 
 }
+.bullet {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   margin-right: .2rem;
+   border-radius: 50%;
+}
+.red{
+   background-color: red;
+}
+.green{
+   background-color: green;
+}
+
+.red{
+   background-color: orange;
+}
 
 
    /* background:linear-gradient(45deg,#161618,#6e4a7e)!important} */
@@ -71,6 +88,10 @@ background-color:  #1e1e2f;
 .request-card{
    margin:20px;
 }
+.invoice-action .btn{
+   background-color:  #1e1e2f !important ;
+}
+
 .wrapper {
    padding-left: 300px;
 }
