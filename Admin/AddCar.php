@@ -44,6 +44,19 @@
              </div>    
 
 
+             <div class="row">
+              <div class="input-field col s6">
+                  <input  id="pricedo" name="pricedo" type="text" class="validate">
+                  <label for="pricedo"> Price per day without Driver in dollar</label>
+                </div>
+      <div class="input-field col s6 ">
+                  <input  id="dpricedo" name="dpricedo" type="text" class="validate">
+                  <label for="dpricedo"> Price per day with Driver in dollar</label>
+                </div>
+                
+             </div>    
+
+
 
 
               <div class="row">
@@ -125,8 +138,8 @@
    </div>
       <div class="col s12 m6 l6">
       <label>
-        <input name="fuel" type="radio"  value="Naphtha"/>
-        <span>Naphtha</span>
+        <input name="fuel" type="radio"  value="Diesel"/>
+        <span>Diesel</span>
       </label>
       </div>
    
@@ -154,9 +167,13 @@
 
 
               <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s6">
                   <input  id="year" name="year" type="text" class="validate">
                   <label for="year"> Build Year</label>
+                </div>
+                <div class="input-field col s6">
+                  <input  id="description" name="description" type="text" class="validate">
+                  <label for="description"> Description</label>
                 </div>
 </div>
 

@@ -5,14 +5,14 @@ if(!isset($_SESSION["USER_EMAIL"])){
   header("Location:../index.php");
 }
 else{
-    if(isset($_POST['deleteCar'])){
+    if(isset($_POST['deletead'])){
         if(isset($_GET['id'])){
-            $deletequery="DELETE FROM cars  WHERE id=?;";
+            $deletequery="DELETE FROM advertisements  WHERE id=?;";
             $deletestmt=mysqli_stmt_init($conn);
             mysqli_stmt_prepare($deletestmt,$deletequery);
             mysqli_stmt_bind_param($deletestmt,"i",$_GET['id']);
             mysqli_stmt_execute($deletestmt);
-            $file_pointer = '../images/carImages'.$_GET['plate'].'.jpg';  
+            $file_pointer = '../images/carImages/'.$_GET['title'].'.jpg';  
    
             // Use unlink() function to delete a file  
             if (!unlink($file_pointer)) {  
@@ -21,11 +21,11 @@ else{
             else {  
                 echo ("$file_pointer has been deleted");  
             }  
-            header("Location:cars.php?status=successfull");
+          header("Location:advertisement.php?status=successfull");
         }
     }
     else{
-        header("Location:cars.php?status=unsuccessfull");
+        header("Location:advertisement.php?status=unsuccessfull");
     }
 }
 ?>

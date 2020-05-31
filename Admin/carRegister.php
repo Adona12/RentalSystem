@@ -7,13 +7,18 @@ if(!isset($_SESSION["USER_EMAIL"])){
 if(isset($_POST['Registercar'])){
     $carPlate=$_POST['carPlate'];
     $cartype=$_POST['cartype'];
- 
+    $description=$_POST['description'];
+    
     $price=$_POST['price'];
     $engine=$_POST['engine'];
     $fuel=$_POST['fuel'];
     $transmission=$_POST['transmission'];
     $cartype=$_POST['cartype'];
     $dprice=$_POST['dprice'];
+    
+    $pricedo=$_POST['pricedo'];
+    $dpricedo=$_POST['dpricedo'];
+   
     $year=$_POST['year'];
 
 $file = $_FILES['file'];
@@ -31,10 +36,10 @@ if(in_array($fileActualExt, $allowed)){
             $fileNameNew = $carPlate.".".$fileActualExt;
             $fileDestination = '../images/carImages/' . $fileNameNew;
     
-    $query="INSERT INTO cars(licencePlate,cartype,carImage,price,dprice,transmission,fuel,engine,byear) VALUES (?,?,?,?,?,?,?,?,?);";
+    $query="INSERT INTO cars(licencePlate,cartype,cdescription,carImage,price,dprice,pricedo,dpricedo,transmission,fuel,engine,byear) VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt=mysqli_stmt_init($conn);
     mysqli_stmt_prepare($stmt,$query);
-    mysqli_stmt_bind_param($stmt,"sssiissss",$carPlate,$cartype,$fileNameNew,$price,$dprice,$transmission,$fuel,$engine,$year);
+    mysqli_stmt_bind_param($stmt,"ssssiiiissss",$carPlate,$cartype,$description,$fileNameNew,$price,$dprice,$pricedo,$dpricedo,$transmission,$fuel,$engine,$year);
     mysqli_stmt_execute($stmt);
     move_uploaded_file($fileTempName, $fileDestination);
 header("Location: AddCar.php?status=successful");

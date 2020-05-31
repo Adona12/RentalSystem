@@ -20,8 +20,8 @@
 
 
 
-<div class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
-    <div class="valign" style="width:100%;">
+<div class="log valign-wrapper" style="width:100%;height:100%;position: absolute;">
+    <div class="log valign" style="width:100%;">
         <div class="container">
            <div class="row">
               <div class="col s12 m6 offset-m3">

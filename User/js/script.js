@@ -25,12 +25,17 @@ $(document).ready(function(){
 
         $(document).ready(function(){
             $('.timepicker').timepicker();
+            $('select').formSelect();
           });
 
           $(document).ready(function(){
             $('.datepicker').datepicker();
-          })
 
+          });
+ $('.datepicker').pickadate({
+
+        format: 'dd/mm/yyyy'    
+    });
 
           $(document).ready(function(){
             $('select').formSelect();

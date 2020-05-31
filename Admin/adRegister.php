@@ -9,21 +9,20 @@ if(isset($_POST['Registerad'])){
     $title=$_POST['title'];
     $describe=$_POST['describe'];
  
-
-$file = $_FILES['file'];
-$fileName = $file['name'];
-$fileTempName = $file['tmp_name'];
-$fileSize = $file['size'];
-$fileError = $file['error'];
-$fileType = $file['type'];
-$fileExt = explode('.', $fileName);
-$fileActualExt = strtolower(end($fileExt));
-$allowed = array('jpg', 'jpeg', 'png');
-if(in_array($fileActualExt, $allowed)){
-    if($fileError === 0){
-        if($fileSize < 1000000000000){
-            $fileNameNew = $title.".".$fileActualExt;
-            $fileDestination = '../images/Ads/' . $fileNameNew;
+    $file = $_FILES['file'];
+    $fileName = $file['name'];
+    $fileTempName = $file['tmp_name'];
+    $fileSize = $file['size'];
+    $fileError = $file['error'];
+    $fileType = $file['type'];
+    $fileExt = explode('.', $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpg', 'jpeg', 'png');
+    if(in_array($fileActualExt, $allowed)){
+        if($fileError === 0){
+            if($fileSize < 1000000000000){
+                $fileNameNew = $title.".".$fileActualExt;
+                $fileDestination = '../images/carImages/' . $fileNameNew;
     
     $query="INSERT INTO advertisements(title,adDescription,adImage) VALUES (?,?,?);";
     $stmt=mysqli_stmt_init($conn);
@@ -31,16 +30,16 @@ if(in_array($fileActualExt, $allowed)){
     mysqli_stmt_bind_param($stmt,"sss",$title,$describe,$fileNameNew);
     mysqli_stmt_execute($stmt);
     move_uploaded_file($fileTempName, $fileDestination);
-    header("Location: advertisment.php?status=successful");
+    header("Location: addAdvertisment.php?status=successful");
         }else{
-            header("Location: advertisment.php?status=image_size_too_big");
+            header("Location:addAdvertsisment.php?status=image_size_too_big");
         }
     }
     else{
-            header("Location:advertisment.php?status=file_error");
+            header("Location:addAdvertisment.php?status=file_error");
         }
     }else{
-            header("Location:advertisment.php?status=file_type_not_allowed");
+            header("Location:addAdvertisment.php?status=file_type_not_allowed");
         }
 }
 ?>

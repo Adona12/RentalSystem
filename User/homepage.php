@@ -55,7 +55,7 @@
               <p class='slogan'>Your-slogan</p>
                 <h1>Lorem ipsum dolor sit, amet consectetur</h1>
           </div>
-          <h1  class="header center blue-grey-text darken-4 ">COMPANY NAME</h1>
+          <h1  class="header center blue-grey-text darken-4 ">Polo Trip and Car Rental</h1>
           
           <div class="row center">
             <h6 style='color:#747474;' class="header justify col s12 light">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, 

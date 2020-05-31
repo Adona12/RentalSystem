@@ -12,7 +12,17 @@ else{
             mysqli_stmt_prepare($deletestmt,$deletequery);
             mysqli_stmt_bind_param($deletestmt,"i",$_GET['id']);
             mysqli_stmt_execute($deletestmt);
+            $file_pointer = '../images/'.$_GET['email'].'.jpg';  
+   
+// Use unlink() function to delete a file  
+if (!unlink($file_pointer)) {  
+    echo ("$file_pointer cannot be deleted due to an error");  
+}  
+else {  
+    echo ("$file_pointer has been deleted");  
+}  
             header("Location:drivers.php?status=successfull");
+            
         }
     }
     else{

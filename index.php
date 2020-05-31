@@ -20,12 +20,12 @@
 
 
 
-<div class="valign-wrapper" style="width:100%;height:100%;position: absolute;">
-    <div class="valign" style="width:100%;">
+<div  class=" valign-wrapper log" style="width:100%;height:100%;position: absolute;">
+    <div class="valign log" style="width:100%;">
         <div class="container">
            <div class="row">
               <div class="col s12 m6 offset-m3">
-                 <div class="card">
+                 <div class="card grey lighten-5">
                     <div class="card-content">
                        <span  style='margin-top:30px;'class="card-title center black-text">LOG IN</span>
                        <form method="post" action="Authentication.php">

@@ -26,7 +26,7 @@ if(!isset($_SESSION["USER_EMAIL"])){
     <nav id="nav-bar" class="gradient-45deg-indigo-purple">
 
 
-
+    <h4 style="margin-top:0rem;text-align:center;padding-top:10px;" id="title"> Polo Trip and Car Rental</h4>
 
     </nav>
  
@@ -49,7 +49,7 @@ if(!isset($_SESSION["USER_EMAIL"])){
     <li><a href="drivers.php">Drivers</a></li>
     <li><a href="advertisment.php">Advertisments</a></li>
    
-    <li><a href="../Logout.php">Profile</a></li>
+    <li><a href="../Logout.php">Logout</a></li>
 
     
 </ul>
@@ -81,28 +81,33 @@ if(!isset($_SESSION["USER_EMAIL"])){
         $image="../images/".$row['driverimage'];
       
 $count++;
-       
+if($count==1){
+  echo ' 
+    
+  <div id="table-card" class="card  grey-text">
+  <div class="contain">
+      <table class=" responsive-table ">
+      <thead>
+        <tr id="car-table">
+        <th>User</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>STATUS</th>
+                <th>ACTION</th>
+        </tr>
+  
+  
+  
+  
+  
+        
+      </thead>';
+}
+
     echo ' 
     
-    <div id="table-card" class="card  grey-text">
-    <div class="contain">
-        <table class=" responsive-table ">
-        <thead>
-          <tr id="car-table">
-          <th>User</th>
-                  <th>Full Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>STATUS</th>
-                  <th>ACTION</th>
-          </tr>
-    
-    
-    
-    
-    
-          
-        </thead>
+   
         <tbody  id="car-table2">
     
     <tr>
@@ -123,7 +128,7 @@ $count++;
           </td>
           <td>
             <div class="invoice-action">
-             <form method="post" action="DeleteDriver.php?id='.$id.'">
+             <form method="post" action="DeleteDriver.php?id='.$id.'&email='.$Email.'">
              <button class="btn  waves-light" type="submit" name="deleteDrive">
              <i class="material-icons right">delete</i>
            </button>

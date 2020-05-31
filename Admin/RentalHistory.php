@@ -36,7 +36,7 @@ $query="SELECT * FROM acceptedrequest";
 
         $referal= $row['referal'];
         $driver= $row['driver'];
-        
+        $count++;
       $pick = strtotime($pickdate);
       $drop = strtotime($dropdate);
       $newpickformat = date('Y-m-d',$pick);
@@ -47,7 +47,14 @@ $query="SELECT * FROM acceptedrequest";
 
 
       $interval =  $second_date ->diff($first_date);
-$duration=" " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days "; 
+      if ($interval->y==0 && $interval->m!=0 ){
+        $duration=" ". $interval->m." months, ".$interval->d." days "; 
+      }else if($interval->m==0){
+        $duration=" ".$interval->d." days "; 
+              }else{
+             
+                $duration=" " . $interval->y . " years, " . $interval->m." months, ".$interval->d." days "; 
+              }
 
       $passport= $row['passport'];
       

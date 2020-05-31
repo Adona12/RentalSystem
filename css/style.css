@@ -52,7 +52,7 @@ nav{
 
 }
 .card,.modal,.modal-footer{
-   background-color:#1e1e2f !important ;
+   background-color:white !important ;
 }
 .modal{
    height:160px;
@@ -72,11 +72,13 @@ nav{
 
 }
 .wrapper,body,html{
-   background-color: black;
+   background-color: whitesmoke;
    z-index: -1;
 }
 
-
+.tabs-content.carousel { height: 100% ; overflow-x:hidden; overflow-y: scroll; } 
+.tabs-content.carousel .carousel-item { width: 100%; height: 100%; }
+ html,body{  height:100%; }
 #table-card{
 margin:30px;
 margin-top: 70px;;
@@ -84,6 +86,10 @@ background-color:  #1e1e2f;
 }
 #check{
    margin:20px;
+}
+#style{
+   text-align: center;
+   margin-top: 0rem;
 }
 .request-card{
    margin:20px;
@@ -174,17 +180,21 @@ transition: box-shadow .25s;
    margin-bottom: 1rem;
 }
 .input-field label {
-   color: rgb(247, 241, 241);
+   /* color: rgb(247, 241, 241); */
+   color:grey;
  }
  textarea{
-   color: rgb(247, 241, 241);
+   /* color: rgb(247, 241, 241); */
+   color:grey;
  }
  .input-field input {
-   color: rgb(247, 241, 241);
+   /* color: rgb(247, 241, 241); */
+   color:grey;
  }
  /* label focus color */
  .input-field input[type=text]:focus + label {
-   color: rgb(253, 247, 247);
+   color:grey;
+   /* color: rgb(253, 247, 247); */
  }
  /* label underline focus color */
  /* .input-field input[type=text]:focus {
@@ -205,3 +215,27 @@ transition: box-shadow .25s;
  /* .input-field .prefix.active {
    color: #000;
  } */
+
+ /* tabs */
+ .tabs .tab a {
+   color: rgba(38, 166, 154, 0.7);
+   /*Custom Text Color*/
+ }
+ 
+ .tabs .tab a:hover {
+   color:#26a69a;
+   /*Custom Color On Hover*/
+ }
+ 
+ .tabs .tab a:focus.active {
+   color:#26a69a;
+   /*Custom Text Color While Active*/
+   background-color: rgba(38, 166, 154, 0.2);
+   /*Custom Background Color While Active*/
+ }
+ 
+ .tabs .indicator {
+   background-color:#26a69a;
+   /*Custom Color Of Indicator*/
+ }
+ 

@@ -7,13 +7,6 @@ session_start();
 ?>
    <div class="wrapper">
 
-
-
-
-
-
-
-  
 </thead>
 <tbody  id="car-table2">
 <?php
@@ -50,9 +43,10 @@ $query="SELECT * FROM acceptedrequest";
       $drop = strtotime($dropdate);
       
       $newdropformat = date('Y-m-d',$drop);
-     $temp= round(abs(strtotime($newdropformat) - strtotime( $newtodayformat))/86400);
+     $temp= round(abs(strtotime($dropdate) - strtotime( $newtodayformat))/86400);
      
       $second_date = new DateTime( $newdropformat );
+    
      
 $color="green";
 if($temp<5){
@@ -64,22 +58,28 @@ if($temp<5){
     }else{
         $color="red";
     }
+    if($count==1){
+        echo '
+
+
+        <div id="table-card" class="card  grey-text">
+        <div class="contain">
+        <table class=" responsive-table ">
+        <thead>
+          <tr id="car-table">
+        
+                  <th>Order number</th>
+                  <th>Client Name</th>
+                  <th>Vehicle Plate</th>
+                  <th>Drop off location</th>
+                  <th>Days left</th>
+                  <th>Tag</th>
+          </tr>';
+    }
 echo '
 
 
-<div id="table-card" class="card  grey-text">
-<div class="contain">
-<table class=" responsive-table ">
-<thead>
-  <tr id="car-table">
 
-          <th>Order number</th>
-          <th>Client Name</th>
-          <th>Vehicle Plate</th>
-          <th>Drop off location</th>
-          <th>Days left</th>
-          <th>Tag</th>
-  </tr>
 <tr>
    
   
@@ -106,6 +106,7 @@ echo '
 }
 if($count==0){
     echo '<div  style="margin-top:300px"class="center">No orders due</div>';
+
 }
 ?>
 </tbody>

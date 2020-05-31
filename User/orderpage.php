@@ -23,7 +23,6 @@
 include "header.php";
 
 
-
 ?>
 
 
@@ -33,7 +32,7 @@ include "header.php";
 
   <div style='height:100%;' class="valign-wrapper row login-box">
     <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
-      <form>
+      <form  method="post" action="RequestResgistration.php" >
         <div class="card-content">
           <span class="card-title">Enter credentials</span>
           <div class="row">
@@ -112,12 +111,12 @@ include "header.php";
 
 
               <div class="input-field col s12">
-                <select>
+                <select name="organization">
                   <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Embassy</option>
-                  <option value="2">NGO</option>
-                  <option value="3">International Organization</option>
-                  <option value="4">Client Referrals</option>
+                  <option value="Embassy">Embassy</option>
+                  <option value="NGO">NGO</option>
+                  <option value="International Organization">International Organization</option>
+                  <option value="Client Referrals">Client Referrals</option>
                 </select>
                 <label>Referrals</label>
               </div>
@@ -130,15 +129,15 @@ include "header.php";
                 <div class='little-margin'>
                     <p> Select Vehicle:</p>
                     <label>
-                        <input name="cartype" type="radio" checked />
+                        <input name="cartype" value="Sedan" type="radio" checked />
                         <span>Sedan</span>
                       </label>
                       <label>
-                        <input name="cartype" type="radio" />
+                        <input name="cartype" value="SUV" type="radio" />
                         <span>SUV</span>
                       </label>
                       <label>
-                        <input name="cartype" type="radio" />
+                        <input name="cartype" value="Luxurious" type="radio" />
                         <span>Luxurious</span>
                       </label>
                 </div>
@@ -146,11 +145,11 @@ include "header.php";
                 <div class='little-margin'>
                     <p> Choose Driver Option:</p>
                     <label>
-                        <input name="driveroption" type="radio" checked />
+                        <input name="driveroption" type="radio" value="1" checked />
                         <span>With Driver</span>
                       </label>
                       <label>
-                        <input name="driveroption" type="radio" />
+                        <input name="driveroption" type="radio"  value="0"/>
                         <span>Without Driver</span>
                       </label>
                 </div>
@@ -163,7 +162,7 @@ include "header.php";
         </div>
         <div class="card-action right-align">
           
-          <input type="submit" class="btn text-white blue darken-3" value="Submit">
+          <input type="submit" class="btn text-white blue darken-3" value="order">
         </div>
       </form>
     </div>

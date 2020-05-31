@@ -9,6 +9,7 @@ session_start();
     <div class="wrapper">
     <div class="row">
     <?php
+
      $count=0;
     include_once 'config.php';
 
@@ -31,13 +32,20 @@ session_start();
         $picklocation= $row['picklocation'];
         $dropdate= $row['dropdate'];
         $droplocation= $row['droplocation'];
+        $picktime= $row['picktime'];
+        $droptime= $row['droptime'];
         $dob= $row['dob'];
         $cartype= $row['cartype'];
         $phone= $row['phone'];
         $referal= $row['referal'];
-        $driver= $row['driver'];
-        $passport= $row['passport'];
+        $driver= "No";
+        $_SESSION['id']=$id;
+        if($row['driver']==true){
+          $driver= "yes";
+        }
         
+        $passport= $row['passport'];
+        $count++;
       if($row['status']==true){
 
        
@@ -50,7 +58,7 @@ session_start();
            <div clas="container">
            <div class="row">
            <div style="margin-top:10px"  class="col s12 m6 attribute">
-            <p>Email: '.$email.'
+            <p>Email: '.$email.' id:'.$id.'
            </div>
            <div style="margin-top:10px" class="col s12 m6 attriute">
            <p>Date of Birth: '.$dob.'
@@ -67,16 +75,19 @@ session_start();
             <p>Pickup Date: '.$pickdate.'
              </div>
              <div style="margin-top:10px" class="col s12 m6 attriute">
-             <p>Pickup Time: '.$pickdate.'
+             <p>Pickup Time: '.$picktime.'
               </div>
               <div style="margin-top:10px" class="col s12 m6 attriute">
               <p>Drop-off Date: '.$dropdate.'
                </div>
                <div style="margin-top:10px" class="col s12 m6 attriute">
-               <p>Drop-off Time: '.$dropdate.'
+               <p>Drop-off Time: '.$droptime.'
                 </div>
                 <div style="margin-top:10px" class="col s12 m6 attriute">
                 <p>Pick-up location:  '.$picklocation.'
+                 </div>
+                 <div style="margin-top:10px" class="col s12 m6 attriute">
+                <p>Drop-off location:  '.$droplocation.'
                  </div>
                  <div style="margin-top:10px" class="col s12 m6 attriute">
                <p>Organization:  '.$company.'
@@ -94,29 +105,39 @@ session_start();
            </div>
         </div>
         <div class="card-action">
-      
+   
       
         <form method="post" action="DeclineOrder.php?id='.$id.'">
-           
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Accept</a>
-           <button id="sbtn" class="btn waves-effect waves-light" type="submit" name="decline">Decline
+           ';
+           if( $row['driver']==true){
+          
+             echo '<a id="mine" class="waves-effect waves-light btn modal-trigger" href="#modal'.$id.'">Accept</a>';
+           }
+           else{
+             echo ' <button id="sbtn" class="btn waves-effect waves-light" type="submit" name="accept">Accept</button>
+             ';
+           }
+        echo '
+      
+           <button id="sbtn" class="btn waves-effect waves-light" type="submit" name="decline">Decline';
 
         
-           </form>
+        echo'   </form>
         </div>
 
 
 
 
 
-        <div id="modal1" class="modal ">
+        <div id="modal'.$id.'" class="modal ">
+        
         <div class="modal-content blue-text text-darken-2">
 
-        <form method="post" action="DeclineOrder.php?id='.$id.'">
+        <form method="post" action="DeclineOrder.php?id='.$row['id'].'">
           
           <div class="input-field col s12">
  <select name="driver">
-   <option value="" disabled selected>Choose the driver</option>
+   <option value="" disabled selected>Choose a driver</option>
    ';
    $query="SELECT * FROM drivers where Available=1";
    $mine=mysqli_stmt_init($conn);
@@ -147,15 +168,17 @@ session_start();
         </div>
         <div class="modal-footer">
 
-          <button id="sbtn" class="btn waves-effect waves-light" type="submit" name="accept">Submit</button>
+          <button id="sbtn" class="btn waves-effect waves-light" type="submit" name="acceptd">Submit</button>
  
           </div>
         </form>
+       
       </div>
-
+    
 
         
     </div>
+
 </div>
          
           
