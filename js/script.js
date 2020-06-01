@@ -17,8 +17,7 @@
     $('select').formSelect();
     $('.modal').modal();
     $('.tabs').tabs({
-      swipeable : true,
-      responsiveThreshold : 1920
+
     });
     $('.datepicker').datepicker();
     document.querySelector('.tabs-content.carousel').style.height = window.innerHeight + "px";

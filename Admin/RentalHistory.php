@@ -10,7 +10,7 @@
 
 <?php
 include_once 'config.php';
-$query="SELECT * FROM acceptedrequest";
+$query="SELECT * FROM acceptedrequest ORDER BY id DESC";
     $mine=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($mine,$query)){
         echo "The statement failed";
@@ -33,7 +33,7 @@ $query="SELECT * FROM acceptedrequest";
         $dob= $row['dob'];
         $cartype= $row['cartype'];
         $phone= $row['phone'];
-
+$price=$row['price'];
         $referal= $row['referal'];
         $driver= $row['driver'];
         $count++;
@@ -147,7 +147,7 @@ echo'
         <span>duration:'.$duration.'</span>
       </div>
       <div class="invoice-address">
-        <span>pay out:2000 birr</span>
+        <span>pay out:'.$price.'ETB</span>
       </div>
     </div>
   <!-- invoice subtotal -->

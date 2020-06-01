@@ -112,7 +112,7 @@ if($count==1){
     
     <tr>
        
-        <td><span class="avatar-contact avatar-online"><img src="'.    $image.'"
+        <td><span class="avatar-contact avatar-online"><img class="circle responsive-img" src="'.    $image.'"
                     alt="avatar"></span></td>
                     <td>'.$Fname.' '.$Lname.'</td>
                     <td>'.$Email.'</td>

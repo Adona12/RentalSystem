@@ -40,6 +40,7 @@ $count=0;
         $dprice=$row["dprice"];
         $description=$row["cdescription"];
         $price=$row["price"];
+        $dprice=$row["dprice"];
         $dpricedo=$row["dpricedo"];
         $pricedo=$row["pricedo"];
         $transmission=$row["transmission"];
@@ -50,10 +51,10 @@ $count=0;
 
        
     echo ' 
-            <div class="col s12 m3 l3">
-              <div class="card">
+            <div class="col s12 m4 l4">
+              <div class="card large">
                 <div class="card-image">
-                  <img src="../images/carImages/'.$carImage.'">
+                  <img class="card-img" src="../images/carImages/'.$carImage.'">
              
                 </div>
                 <div class="card-content">
@@ -62,7 +63,7 @@ $count=0;
                   <div>Car type: '.$cartype.'</div>
                   </div>
                   <div class="col s12 m6">
-                  <div>Engine: '.$description.'</div>
+                  <div> '.$description.'</div>
                   </div>
                   <div class="col s12 m6">
                   <div>Engine: '.$engine.'</div>
@@ -75,17 +76,42 @@ $count=0;
                   </div>
                   
                   <div class="col s12 m6">
-                  <div>Plate number: '.$licencePlate.'</div>
+                  <div>Plate: '.$licencePlate.'</div>
                   </div>
-                  <div class="col s12 m6">
-                  <div>Price: '.$price.'ETB</div>
+                  ';
+                  if($cartype=="Sedan"){
+               
+echo '
+<div class="col s12 m12">
+<div class="center">Without driver</div>
+</div>
+<div class="col s12 m6">
+<div>Price: '.$price.'ETB</div>
+</div>
+<div class="col s12 m6">
+<div>Price: $'.$pricedo.'</div>
+</div>';
+                  }
+                  else{
+                echo'    <div class="col s12 m12">
+<div class="center">Cannot be rented without driver</div>
+</div>';
+                  }
+
+                  echo '
+                  <div class="col s12 m12">
+                  <div class="center">With driver</div>
                   </div>
-                  <div class="col s12 m6">
-                  <div>Price: $'.$pricedo.'</div>
-                  </div>
+                                      <div class="col s12 m6">
+                                      <div>Price: '.$dprice.'ETB</div>
+                                      </div>
+                                      <div class="col s12 m6">
+                                      <div>Price: $'.$dpricedo.'</div>
+                                      </div>
+                                                  
                 </div>
                 <form method="post" action="updateCar.php?id='.$id.'&plate='.$licencePlate.'">
-                <button id="car-button" class=" btn  waves-light" type="submit" name="deleteCar">Remove From Unavailable
+                <button id="car-button" class=" btn  waves-light" type="submit" name="updateCar">Remove From Unavailable
                 <i class="material-icons right">delete</i>
                
               </button>
@@ -172,10 +198,10 @@ $count=0;
 
        
     echo ' 
-            <div class="col s12 m3 l3">
-              <div class="card">
+            <div class="col s12 m6 l3">
+              <div class="card  ">
                 <div class="card-image">
-                  <img src="../images/carImages/'.$carImage.'">
+                  <img class="card-img" src="../images/carImages/'.$carImage.'">
              
                 </div>
                 <div class="card-content">
@@ -184,7 +210,7 @@ $count=0;
                   <div>Car type: '.$cartype.'</div>
                   </div>
                   <div class="col s12 m6">
-                  <div>Engine: '.$description.'</div>
+                  <div>'.$description.'</div>
                   </div>
                   <div class="col s12 m6">
                   <div>Engine: '.$engine.'</div>
@@ -197,23 +223,53 @@ $count=0;
                   </div>
                   
                   <div class="col s12 m6">
-                  <div>Plate number: '.$licencePlate.'</div>
+                  <div>Plate : '.$licencePlate.'</div>
                   </div>
-                  <div class="col s12 m6">
-                  <div>Price: '.$price.'ETB</div>
-                  </div>
-                  <div class="col s12 m6">
-                  <div>Price: $'.$pricedo.'</div>
-                  </div>
+                  <div class="divider mb-3 mt-3"></div>';
+                  if($cartype=="Sedan"){
+               
+                    echo '
+                    <div class="col s12 m12">
+<div class="center">Without driver</div>
+</div>
+                    <div class="col s12 m6">
+                    <div>Price: '.$price.'ETB</div>
+                    </div>
+                    <div class="col s12 m6">
+                    <div>Price: $'.$pricedo.'</div>
+                    </div>';
+                                      }
+                                      else{
+                                        echo'    <div class="col s12 m12">
+                        <div class="center">Cannot be rented without driver</div>
+                        </div>';
+                                          }
+                    
+                
+                echo '
+                
+                <div class="col s12 m12">
+                <div class="center">With driver</div>
                 </div>
+                                    <div class="col s12 m6">
+                                    <div>Price: '.$dprice.'ETB</div>
+                                    </div>
+                                    <div class="col s12 m6">
+                                    <div>Price: $'.$dpricedo.'</div>
+                                    </div>
+                                                
+                
+               
+                <div class="col s12 m12">
                 <form method="post" action="deletecar.php?id='.$id.'&plate='.$licencePlate.'">
                 <button id="car-button" class=" btn  waves-light" type="submit" name="deleteCar">Remove 
                 <i class="material-icons right">delete</i>
                
               </button>
                    <form/>
+                   </div>
                 </div>
-               
+                </div>
               </div>
             </div>
     

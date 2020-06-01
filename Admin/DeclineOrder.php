@@ -22,6 +22,7 @@ $query="UPDATE request SET status=? WHERE id=?;";
     
     if(!mysqli_stmt_prepare($mine,$query)){
         echo "The statement failed";
+        echo "here";
     }else{
     
     mysqli_stmt_execute($mine);
@@ -42,18 +43,65 @@ $query="UPDATE request SET status=? WHERE id=?;";
         $phone= $row['phone'];
         $referal= $row['referal'];
         $driver= $row['driver'];
-        
-    echo "here";
+
       
         $passport= $row['passport'];
     }
+
 }
+echo $cartype;
+
+$carquery="SELECT * FROM cars WHERE licencePlate=?";
+  
+$carmine=mysqli_stmt_init($conn);
+echo mysqli_error($conn);
+if(!mysqli_stmt_prepare($carmine,$carquery)){
+    echo "The statement failed";
+}else{
+    mysqli_stmt_bind_param($carmine,"s",$cartype);
+mysqli_stmt_execute($carmine);
+$carresult=mysqli_stmt_get_result($carmine);
+while($carrow=mysqli_fetch_assoc($carresult)){
+    $carde = $carrow['cartype'];
+
+    $dprice=$carrow["dprice"];
+
+    $price=$carrow["price"];
+    $dprice=$carrow["dprice"];
+    $dpricedo=$carrow["dpricedo"];
+    $pricedo=$carrow["pricedo"];
+
+}
+}
+$temp= round(abs(strtotime($dropdate) - strtotime( $pickdate))/86400);
+if($carde=="Sedan"){
+
+    if($driver==0){
+        $totalprice=$temp* $price;
+        $totalpricedo=$temp*  $pricedo;
+    }else{
+    $totalprice=$temp* $dprice;
+    $totalpricedo=$temp*  $dpricedo;
+}
+    
+}
+else{
+    $totalprice=$temp* $dprice;
+    $totalpricedo=$temp*  $dpricedo;
+}
+echo "  vvvvvv     ";
+echo $totalprice;
+echo "  {{{{{{{{{{vvvvvv }}}}}}}}}}    ";
+echo $driver;
+echo "   ggggggggggg   ";
+echo $temp;
+echo "   jjjjjjjjjj   ";
 $car="B77218";
 $drive=0;
 if(isset($_POST['acceptd'])){
     $drive=$_POST['driver'];
     }
-    $acceptquery="INSERT INTO acceptedrequest ( fname, lname, dob, phone, email, organization, organizationemail, referal, passport, pickdate, dropdate, picklocation, droplocation, cartype, driver,carplate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?);";
+    $acceptquery="INSERT INTO acceptedrequest ( fname, lname, dob, phone, email, organization, organizationemail, referal, passport, pickdate, dropdate, picklocation, droplocation, cartype, driver,carplate,price) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?);";
    $stmt=mysqli_stmt_init($conn);
    if(!mysqli_stmt_prepare($stmt,$acceptquery)){
     echo "The statement failed";
@@ -62,9 +110,8 @@ if(isset($_POST['acceptd'])){
  
   
   
-    mysqli_stmt_bind_param($stmt,"ssssssssssssssii",$user,$userln,$dob,$phone,$email,$company,$organizationEmail,$referal,$passport,$pickdate,$dropdate,$picklocation,$droplocation,$cartype, $drive,$car);
+    mysqli_stmt_bind_param($stmt,"ssssssssssssssiii",$user,$userln,$dob,$phone,$email,$company,$organizationEmail,$referal,$passport,$pickdate,$dropdate,$picklocation,$droplocation,$cartype, $drive,$car,$totalprice);
   
-   echo  $drive;
    mysqli_stmt_execute($stmt);
    echo mysqli_error($conn);
 
@@ -83,7 +130,7 @@ $status=0;
 
  
     
-  // header("Location: order.php?status=successful");
+   header("Location: order.php?status=successful");
   
 }
 ?>

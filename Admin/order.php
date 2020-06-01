@@ -53,7 +53,7 @@ session_start();
     <div class="col s12 m6">
     <div class="card ">
         <div class="card-content grey-text">
-            <span class="card-title indigo-text ">Rental Request from '.$company.'</span>
+            <span class="card-title indigo-text ">Rental Request from '.$company.'</span> 
             <div class="divider "></div>
            <div clas="container">
            <div class="row">
