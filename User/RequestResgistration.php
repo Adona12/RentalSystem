@@ -1,6 +1,5 @@
 <?php
 include_once '../Admin/config.php';
-
     $Driver=false;
     $fullname=$_POST['fullname'];
     $email=$_POST['email'];
@@ -8,8 +7,7 @@ include_once '../Admin/config.php';
     $id=$_POST['id'];
     $passport=$_POST['passport'];
     $pickuptime=$_POST['pickuptime'];
-    $cartype=$_POST['cartype'];
-    
+    $cartype=$_POST['cartype'];    
     $pickupdate=$_POST['pickupdate'];
     $pickup=$_POST['pickup'];
     $dropofftime=$_POST['dropofftime'];
