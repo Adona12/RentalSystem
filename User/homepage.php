@@ -16,30 +16,11 @@
             
     <title>Document</title>
 </head>
-<body >
-    <nav class="nav-wrapper container">
-    <a id="logo-container" href="#"  style='color:black;'class="brand-logo">Logo</a>
-        <a href="#" class="sidenav-trigger" data-target="mobile-links">
-            <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-        <li> <a href="homepage.php">Home</a></li>
-            <li> <a href="orderpage.php">Order Now</a></li>
-            <li> <a href="">Profile</a></li>
-            <li> <a href="../Logout.php">Log Out</a></li>
-         
+<?php
 
-        </ul>
-        
-    </nav>
-    <ul class="sidenav" id="mobile-links">
-    <li> <a href="homepage.php">Home</a></li>
-            <li> <a href="orderpage.php">Order Now</a></li>
-            <li> <a href="">Profile</a></li>
-            <li> <a href="../Logout.php">Log Out</a></li>
+include 'header.php';
 
-
-    </ul>
+?>
 
     <div class="carousel carousel-slider" style='height:500px !important'>
             <a   class="carousel-item" href="#one!"> <div class='carousel-image' style='background-image: url(images/wedding.jpg);'>  <div class='fading-gradient' ></div> </div> </a>
@@ -53,6 +34,7 @@
           <div class='slogan-container'>
           <hr  class='hrstyle'>
               <p class='slogan'>Your-slogan</p>
+       
                 <h1>Lorem ipsum dolor sit, amet consectetur</h1>
           </div>
           <h1  class="header center blue-grey-text darken-4 ">Polo Trip and Car Rental</h1>
@@ -68,6 +50,7 @@
                 consequuntur officia nemo magnam incidunt eveniet, nihil esse repudiandae labore sint quibusdam deleniti voluptas 
                 sunt necessitatibus excepturi, explicabo recusandae. Quisquam, assumenda!</h6>
           </div>
+     
           
 
           <div class="container">
