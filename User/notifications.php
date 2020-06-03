@@ -24,10 +24,29 @@ include 'header.php';
 ?>
 
 <ul class="collection">
-      <li class="collection-item"> <h5>Alvin</h5> </li>
-      <li class="collection-item"> <h5>Alvin</h5> </li>
-      <li class="collection-item"> <h5>Alvin</h5> </li>
-      <li class="collection-item"> <h5>Alvin</h5> </li>
+
+
+<?php
+
+$query='SELECT * FROM request WHERE status=0 AND email="'.$_SESSION['USER_EMAIL'].'";';
+$mine=mysqli_stmt_init($conn);
+if(!mysqli_stmt_prepare($mine,$query)){
+    echo "The statement failed";
+}else{
+
+mysqli_stmt_execute($mine);
+
+$result=mysqli_stmt_get_result($mine);
+while($row=mysqli_fetch_assoc($result)){
+    $id=$row['id'];
+    $user= $row['fname'];
+    $email= $row['email'];
+    $cartype= $row['cartype'];
+    echo ' <li class="collection-item"> <h5>Your request to rent Vehicle '.$cartype.' has been declined</h5> </li>';
+}
+}
+?>
+     
     </ul>
 
 

@@ -89,7 +89,7 @@ if($count==1){
       <table class=" responsive-table ">
       <thead>
         <tr id="car-table">
-        <th>User</th>
+     
                 <th>Full Name</th>
                 <th>Email</th>
                 <th>Phone</th>
@@ -112,8 +112,7 @@ if($count==1){
     
     <tr>
        
-        <td><span class="avatar-contact avatar-online"><img class="circle responsive-img" src="'.    $image.'"
-                    alt="avatar"></span></td>
+     
                     <td>'.$Fname.' '.$Lname.'</td>
                     <td>'.$Email.'</td>
                     <td>'.$phone.'</td>

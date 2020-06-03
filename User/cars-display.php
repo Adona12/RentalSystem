@@ -19,36 +19,45 @@
 
 include "header.php";
 
-?>
 
+if(!isset($_SESSION["USER_EMAIL"])){
+    header("Location:index.php");
+    
+  }
+  if(!isset($_POST['order'])){
+    header("Location:orderpage.php");
+    
+  }
+
+echo'
 <form action="" method="post">
 
-<input type="text" value='' name='fullname'>
-<input type="email" value='' name='email'>
-<input type="text" value='' name='tel'>
-<input type="text" value='' name='id'>
-<input type="text" value='' name='passpport'>
-<input type="text" value='' name='pickuptime'>
-<input type="text" value='' name='cartype'>
-<input type="text" value='' name='pickupdate'>
-<input type="text" value='' name='pickup'>
-<input type="text" value='' name='dropofftime'>
-<input type="text" value='' name='dropoffdate'>
-<input type="text" value='' name='dropoff'>
-<input type="text" value='' name='organization'>
-<input type="email" value='' name='referralemail'>
-<input type="text"value='' name='driveroption'>
+<input type="text" value="'.$_POST['fullname'].'" name="fullname">
+<input type="email" value="'.$_POST['email'].'" name="email">
+<input type="text" value="'.$_POST['tel'].'" name="tel">
+<input type="text" value="'.$_POST['id'].'" name="id">
+<input type="text" value="'.$_POST['passport'].'" name"passpport">
+<input type="text" value="'.$_POST['pickuptime'].'" name="pickuptime">
+<input type="text" value="'.$_POST['cartype'].'" name="cartype">
+<input type="text" value="'.$_POST['pickupdate'].'" name="pickupdate">
+<input type="text" value="'.$_POST['pickup'].'" name="pickup">
+<input type="text" value="'.$_POST['dropofftime'].'" name="dropofftime">
+<input type="text" value="'.$_POST['dropoffdate'].'" name="dropoffdate">
+<input type="text" value="'.$_POST['dropoff'].'" name="dropoff">
+<input type="text" value="'.$_POST['organization'].'" name="organization">
+<input type="email" value="'.$_POST['referralemail'].'" name="referralemail">
+<input type="text"value="'.$_POST['driveroption'].'" name="driveroption">
 
 
 
-</form>
-
+</form>';
+?>
 <div style='padding:50px;' class="row">
 <?php
 
   include_once '../Admin/config.php';
 $count=0;
-    $query="SELECT * FROM cars  WHERE status=1 ORDER BY id DESC";
+    $query='SELECT * FROM cars  WHERE status=1 AND cartype="'.$_POST['cartype'].'" ORDER BY id DESC';
     $mine=mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($mine,$query)){
         echo "The statement failed";

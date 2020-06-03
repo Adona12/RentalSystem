@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +23,10 @@
 
 
 include "header.php";
-
+if(!isset($_SESSION["USER_EMAIL"])){
+  header("Location:../index.php");
+  
+}
 
 ?>
 
@@ -32,7 +37,7 @@ include "header.php";
 
   <div style='height:100%;' class="valign-wrapper row login-box">
     <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
-      <form  method="post" action="RequestResgistration.php" >
+      <form  method="post" action="cars-display.php" >
         <div class="card-content">
           <span class="card-title">Enter credentials</span>
           <div class="row">
@@ -137,7 +142,7 @@ include "header.php";
                         <span>SUV</span>
                       </label>
                       <label>
-                        <input name="cartype" value="Luxurious" type="radio" />
+                        <input name="cartype" value="Luxourious car" type="radio" />
                         <span>Luxurious</span>
                       </label>
                 </div>
@@ -162,7 +167,7 @@ include "header.php";
         </div>
         <div class="card-action right-align">
           
-          <input type="submit" class="btn text-white blue darken-3" value="order">
+          <input type="submit" class="btn text-white blue darken-3" name="order" value="order">
         </div>
       </form>
     </div>
