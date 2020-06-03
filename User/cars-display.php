@@ -30,23 +30,9 @@ if(!isset($_SESSION["USER_EMAIL"])){
   }
 
 echo'
-<form action="" method="post">
+<form action="RequestRegistration.php" method="post">
 
-<input type="text" value="'.$_POST['fullname'].'" name="fullname">
-<input type="email" value="'.$_POST['email'].'" name="email">
-<input type="text" value="'.$_POST['tel'].'" name="tel">
-<input type="text" value="'.$_POST['id'].'" name="id">
-<input type="text" value="'.$_POST['passport'].'" name"passpport">
-<input type="text" value="'.$_POST['pickuptime'].'" name="pickuptime">
-<input type="text" value="'.$_POST['cartype'].'" name="cartype">
-<input type="text" value="'.$_POST['pickupdate'].'" name="pickupdate">
-<input type="text" value="'.$_POST['pickup'].'" name="pickup">
-<input type="text" value="'.$_POST['dropofftime'].'" name="dropofftime">
-<input type="text" value="'.$_POST['dropoffdate'].'" name="dropoffdate">
-<input type="text" value="'.$_POST['dropoff'].'" name="dropoff">
-<input type="text" value="'.$_POST['organization'].'" name="organization">
-<input type="email" value="'.$_POST['referralemail'].'" name="referralemail">
-<input type="text"value="'.$_POST['driveroption'].'" name="driveroption">
+
 
 
 
@@ -128,12 +114,30 @@ echo '
                   echo '
           
                                       <div class="col s12 m12">
+                                   
                                       <div>Price with: '.$dprice.'ETB /  $'.$dpricedo.' </div>
                                       </div>
                                      
                 </div>
-                <form method="post" action="updateCar.php?id='.$id.'&plate='.$licencePlate.'">
-                <button class="btn hidden-btn" type="submit">Choose Car</button>   
+                <form method="post" action="RequestRegistration.php?id='.$id.'&plate='.$licencePlate.'">
+                <input type="text" value="'.$_POST['fullname'].'" name="fullname">
+<input type="email" value="'.$_POST['email'].'" name="email">
+<input type="text" value="'.$_POST['tel'].'" name="tel">
+<input type="text" value="'.$_POST['id'].'" name="id">
+
+
+<input type="text" value="'.$_POST['passport'].'" name="passport">
+<input type="text" value="'.$_POST['pickuptime'].'" name="pickuptime">
+<input type="text" value="'.$_POST['cartype'].'" name="cartype">
+<input type="text" value="'.$_POST['pickupdate'].'" name="pickupdate">
+<input type="text" value="'.$_POST['pickup'].'" name="pickup">
+<input type="text" value="'.$_POST['dropofftime'].'" name="dropofftime">
+<input type="text" value="'.$_POST['dropoffdate'].'" name="dropoffdate">
+<input type="text" value="'.$_POST['dropoff'].'" name="dropoff">
+<input type="text" value="'.$_POST['organization'].'" name="organization">
+<input type="email" value="'.$_POST['referralemail'].'" name="referralemail">
+<input type="text"value="'.$_POST['driveroption'].'" name="driveroption">
+                <button class="btn hidden-btn" name="carChoice" type="submit">Choose Car</button>   
                 <form/>
 
                 </div>

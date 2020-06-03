@@ -78,7 +78,7 @@ if(!isset($_SESSION["USER_EMAIL"])){
         $Email=$row["email"];
         $phone=$row["phone"];
         $Available=$row['available'];
-        $image="../images/".$row['driverimage'];
+
       
 $count++;
 if($count==1){

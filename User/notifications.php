@@ -44,6 +44,12 @@ while($row=mysqli_fetch_assoc($result)){
     $cartype= $row['cartype'];
     echo ' <li class="collection-item"> <h5>Your request to rent Vehicle '.$cartype.' has been declined</h5> </li>';
 }
+
+   $deletequery="DELETE FROM request  WHERE id=?;";
+    $deletestmt=mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($deletestmt,$deletequery);
+    mysqli_stmt_bind_param($deletestmt,"i",$id);
+    mysqli_stmt_execute($deletestmt);
 }
 ?>
      
