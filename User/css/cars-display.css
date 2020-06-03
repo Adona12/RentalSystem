@@ -1,0 +1,16 @@
+.card{
+    border: solid 1px #c2c2c2;
+    box-shadow: none !important;
+}
+
+.card-img{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+ }
+
+
+input {
+    display:none;
+    
+}
