@@ -21,6 +21,28 @@ include "header.php";
 
 ?>
 
+<form action="" method="post">
+
+<input type="text" value='' name='fullname'>
+<input type="email" value='' name='email'>
+<input type="text" value='' name='tel'>
+<input type="text" value='' name='id'>
+<input type="text" value='' name='passpport'>
+<input type="text" value='' name='pickuptime'>
+<input type="text" value='' name='cartype'>
+<input type="text" value='' name='pickupdate'>
+<input type="text" value='' name='pickup'>
+<input type="text" value='' name='dropofftime'>
+<input type="text" value='' name='dropoffdate'>
+<input type="text" value='' name='dropoff'>
+<input type="text" value='' name='organization'>
+<input type="email" value='' name='referralemail'>
+<input type="text"value='' name='driveroption'>
+
+
+
+</form>
+
 <div style='padding:50px;' class="row">
 <?php
 
@@ -86,14 +108,9 @@ $count=0;
                   if($cartype=="Sedan"){
                
 echo '
+
 <div class="col s12 m12">
-<div class="center">Without driver</div>
-</div>
-<div class="col s12 m6">
-<div>Price: '.$price.'ETB</div>
-</div>
-<div class="col s12 m6">
-<div>Price: $'.$pricedo.'</div>
+<div>Price w/o driver: '.$price.'ETB / $'.$pricedo.' </div>
 </div>';
                   }
                   else{
@@ -103,16 +120,11 @@ echo '
                   }
 
                   echo '
-                  <div class="col s12 m12">
-                  <div class="center">With driver</div>
-                  </div>
-                                      <div class="col s12 m6">
-                                      <div>Price: '.$dprice.'ETB</div>
+          
+                                      <div class="col s12 m12">
+                                      <div>Price with: '.$dprice.'ETB /  $'.$dpricedo.' </div>
                                       </div>
-                                      <div class="col s12 m6">
-                                      <div>Price: $'.$dpricedo.'</div>
-                                      </div>
-                                                  
+                                     
                 </div>
                 <form method="post" action="updateCar.php?id='.$id.'&plate='.$licencePlate.'">
                    <form/>

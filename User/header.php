@@ -15,12 +15,12 @@
             $notification=true;
             
                 if(!$notification){
-                    echo '<li> <a href=""><span class="material-icons">
+                    echo '<li> <a href="notifications.php"><span class="material-icons">
                     notification_important
                     </span></a></li>';
                 }
                 else{
-                    echo " <li> <a href=''><span style='border-radius:6px;border:solid red; color:red;' class='material-icons'>
+                    echo " <li> <a  href='notifications.php'><span id='bell' class='material-icons'>
                     notification_important
                     </span></a></li>";
                 }
@@ -37,6 +37,22 @@
             <li> <a href="orderpage.php">Order Now</a></li>
             <li> <a href="">Profile</a></li>
             <li> <a href="Logout.php">Log Out</a></li>
+            <?php
+            $notification=true;
+            
+                if(!$notification){
+                    echo '<li> <a href="notifications.php"><span class="material-icons">
+                    notification_important
+                    </span></a></li>';
+                }
+                else{
+                    echo " <li> <a href='notifications.php'><span id='bell' class='material-icons'>
+                    notification_important
+                    </span></a></li>";
+                }
+
+            ?>
+            
 
 
     </ul>
