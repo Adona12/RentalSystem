@@ -85,9 +85,6 @@ $count=0;
                 </div>
                 <div class="card-content">
                 <div class="row">
-                <div class="col s12 m6">
-                  <div>Car type: '.$cartype.'</div>
-                  </div>
                   <div class="col s12 m6">
                   <div> '.$description.'</div>
                   </div>
@@ -127,7 +124,9 @@ echo '
                                      
                 </div>
                 <form method="post" action="updateCar.php?id='.$id.'&plate='.$licencePlate.'">
-                   <form/>
+                <button class="btn hidden-btn" type="submit">Choose Car</button>   
+                <form/>
+
                 </div>
                
               </div>
