@@ -14,3 +14,12 @@ input {
     display:none;
     
 }
+.hidden-btn{
+   visibility: hidden;
+}
+.card:hover{
+    border: solid 1px #007bff;
+}
+.card:hover  .hidden-btn{
+   visibility: visible;
+}
