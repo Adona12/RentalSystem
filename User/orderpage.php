@@ -70,7 +70,7 @@ include "header.php";
                 </div>
                 <div class="input-field col s6">
                   <label for="pickupdate">Pick Up Date</label>
-                  <input type="text" name='pickupdate' class="datepicker">
+                  <input type="text" id="pickdate" name='pickupdate' class="datepicker">
                 </div>
 
               </div>
@@ -93,7 +93,7 @@ include "header.php";
                   </div>
                   <div class="input-field col s6">
                     <label for="dropoffdate">Drop Off Date</label>
-                    <input type="text" name='dropoffdate' class="datepicker">
+                    <input type="text" id="dropdate" name='dropoffdate' class="datepicker">
                   </div>
   
                 </div>

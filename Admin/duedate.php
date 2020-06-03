@@ -49,11 +49,11 @@ $query="SELECT * FROM acceptedrequest";
     
      
 $color="green";
-if($temp<5){
+if($temp<=5){
     $count++;
 
 
-    if($temp<5 AND $temp>3){
+    if($temp<=5 AND $temp>3){
         $color="orange";
     }else{
         $color="red";
