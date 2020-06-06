@@ -16,7 +16,6 @@
                   <h4>Car Registration Form</h4>
                 </div>
               </div>
-             
                 <div class="input-field col s6 ">
                   <input  id="carPlate" name="carPlate" type="text" class="validate">
                   <label for="carPlate">Plate Number</label>
@@ -29,7 +28,6 @@
 
               </div>
               
-
 
               <div class="row">
               <div class="input-field col s6">

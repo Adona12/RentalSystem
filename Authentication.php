@@ -30,6 +30,9 @@ if(!isset($_POST['login'])){
         header("Location:Admin/cars.php");
      //echo $_SESSION['USER_EMAIL'];
         }else{
+            $_SESSION['USER_EMAIL']=$email;
+            $_SESSION['Fname']=$Fname;
+            $_SESSION['Lname']=$Lname;
             header("Location:User/homepage.php");
         }
     }

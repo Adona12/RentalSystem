@@ -38,18 +38,7 @@
                   <label for="email">Email</label>
                 </div>
               </div>
-              <div class="row">
-              <div class="file-field input-field">
-            <div class="btn">
-              <span>Upload Image</span>
-        <input type="file" name="file">
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
-      </div>
-    </div>
-   
-              </div>
+            
               <button id="sbtn" class="btn waves-effect waves-light" type="submit" name="Register">Submit
     <i class="material-icons right">send</i>
   </button>

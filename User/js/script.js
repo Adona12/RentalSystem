@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
         $('.sidenav').sidenav();
-        console.log("sdfasd");
+      
         $('.carousel').carousel({
             indicators: true,
             fullWidth: true
@@ -29,13 +29,11 @@ $(document).ready(function(){
           });
 
           $(document).ready(function(){
-            $('.datepicker').datepicker();
+            $('#dropdate').datepicker();
+            $('#pickdate').datepicker();
 
           });
- $('.datepicker').pickadate({
 
-        format: 'dd/mm/yyyy'    
-    });
 
           $(document).ready(function(){
             $('select').formSelect();
@@ -48,10 +46,20 @@ $(document).ready(function(){
                 $("#confirm-password").removeClass("invalid").addClass("valid");
             }
         });
-        
+        $("#dropdate").onSelect("keyup", function (e) {
+            a = new Date( $("#pickdate").val()),
+            b = new Date($(this).val());
+            var  msDay = 60*60*24*1000;
+            console.log(Math.floor((b - a) / msDay) + ' full days between');
+                // $(this).removeClass("valid").addClass("invalid");
+           
+                // $(this).removeClass("invalid").addClass("valid");
+            });
         $("#confirm-password").on("keyup", function (e) {
             if ($("#password").val() != $(this).val()) {
                 $(this).removeClass("valid").addClass("invalid");
             } else {
                 $(this).removeClass("invalid").addClass("valid");
             }});
+       
+          
