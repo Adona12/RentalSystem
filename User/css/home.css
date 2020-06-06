@@ -49,3 +49,19 @@ background: linear-gradient(90deg, rgba(255,255,255,1) 22%, rgba(255,255,255,0) 
     display:inline-block;
      color:#3957ff;
 }
+
+.ad-imgs{
+    display:inline-flex;
+     max-width:23%;
+      /* margin:0 10px;   */
+      overflow: hidden;
+      }
+
+  .ad-imgs img{
+    height:200px;
+  }   
+  .ads-container{
+      margin-top:50px;
+    justify-content: center;
+    display:flex;
+  } 

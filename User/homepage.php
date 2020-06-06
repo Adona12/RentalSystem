@@ -50,6 +50,14 @@ include 'header.php';
                 consequuntur officia nemo magnam incidunt eveniet, nihil esse repudiandae labore sint quibusdam deleniti voluptas 
                 sunt necessitatibus excepturi, explicabo recusandae. Quisquam, assumenda!</h6>
           </div>
+          <div class='ads-container'>
+          
+          <div class='ad-imgs'><img src="images/eth.jpg" alt=""></div>
+          <div class='ad-imgs'><img src="images/pp.jpg" alt=""></div>
+          <div class='ad-imgs'><img src="images/eth.jpg" alt=""></div>
+          <div class='ad-imgs'><img src="images/pp.jpg" alt=""></div>
+          
+          </div>
      
           
 
